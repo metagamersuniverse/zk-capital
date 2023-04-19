@@ -18,7 +18,7 @@ function Navbar() {
                     <div className={styles.menuSection}>
                         <ul className={styles.menu}>
 
-                        <li><Link href="#"><a className={styles.menuItem}><b>Dashboard</b></a></Link></li>
+                        <li><Link href="https://app.zkc.capital/"><a className={styles.menuItem}><b>Dashboard</b></a></Link></li>
                             <li><Link href="#about"><a className={styles.menuItem}>About</a></Link></li>
                             <li><Link href="#token"><a className={styles.menuItem}>Token</a></Link></li>
                             <li><Link href="https://docs.zkc.capital/"><a className={styles.menuItem}>Whitepaper</a></Link></li>
