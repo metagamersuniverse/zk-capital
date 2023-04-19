@@ -1,0 +1,25 @@
+The contract has several variables and functions:
+
+Variables:
+
+admin: the address of the contract's administrator, who can start and stop the presale and collect remaining tokens and funds.
+owner: the address of the contract's owner, who can also collect remaining tokens and funds.
+rate: the conversion rate between Ether and tokens (i.e., how many tokens can be purchased for each Ether).
+weiRaised: the total amount of Ether raised during the presale.
+totalSupply: the total supply of tokens available for the presale.
+minPurchase: the minimum amount of Ether that an investor can purchase.
+maxPurchase: the maximum amount of Ether that an investor can purchase.
+endTime: the timestamp when the presale ends.
+hardCap: the maximum amount of Ether that can be raised during the presale.
+presaleStarted: a boolean variable indicating whether the presale has started.
+token: an interface to the ERC20 token that will be sold during the presale.
+tokenName: the name of the ERC20 token.
+tokenSymbol: the symbol of the ERC20 token.
+holders: a mapping of investors' addresses to the number of tokens they hold.
+Functions:
+
+startPresale: a function to start the presale. It takes several parameters (the token address, token name and symbol, conversion rate, minimum and maximum purchase limits, end time, and hard cap) and can only be called by the contract's administrator. Once called, it sets the presaleStarted variable to true and emits the PresaleStarted event.
+stopPresale: a function to stop the presale. It can be called by the contract's administrator or owner and sets the presaleStarted variable to false. It emits the PresaleStopped event.
+buyTokens: a function for investors to purchase tokens. It can only be called during the presale and requires the amount of Ether sent to be within the minimum and maximum purchase limits. The function calculates the number of tokens to be transferred to the investor based on the conversion rate, transfers the tokens to the investor, updates the weiRaised and holders variables, and emits the TokensPurchased event.
+collectLeftTokens: a function for the administrator or owner to collect any remaining tokens in the contract after the presale has ended. It requires the presale to have been stopped and transfers the tokens to the specified beneficiary address. It emits the OwnerCollectedTOKEN event.
+collectOwnableAmount: a function for the administrator or owner to collect any remaining Ether in the contract. It transfers the Ether to the specified beneficiary address and emits the OwnerCollectedBNB event.
