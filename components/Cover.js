@@ -168,12 +168,6 @@ const MyComponent = () => {
                 if (tokenData.twitter == "") {
                     document.getElementById('twitter').style.display = "none";
                 }
-                if (tokenData.email == "") {
-                    document.getElementById('email').style.display = "none";
-                }
-                if (tokenData.smartContractAudit == "") {
-                    document.getElementById('audited').style.display = "none";
-                }
                 if (tokenData.kycVerified == "") {
                     document.getElementById('verified').style.display = "none";
                 }
@@ -190,9 +184,37 @@ const MyComponent = () => {
     }, [])
 
     useEffect(() => {
+    
+        })
 
-    })
-
+    function Countdown() {
+      useEffect(() => {
+        const countdownDate = new Date('April 21, 2023 15:00:00 UTC').getTime();
+    
+        const countdownInterval = setInterval(() => {
+          const now = new Date().getTime();
+          const timeRemaining = countdownDate - now;
+    
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+          document.getElementById('days').textContent = days;
+          document.getElementById('hours').textContent = hours;
+          document.getElementById('minutes').textContent = minutes;
+          document.getElementById('seconds').textContent = seconds;
+    
+          if (timeRemaining < 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
+    
+        // Clear the interval when the component is unmounted
+        return () => clearInterval(countdownInterval);
+      }, []);
+    }
+    
 
     function buyToken(amount) {
         let _price = web3.utils.toWei(amount);
@@ -323,19 +345,24 @@ const MyComponent = () => {
                         </div>
                         {/* countdown */}
                         
-                        <div className={styles.countdownContainer}>
-                            <div className={styles.countdownWrapper}>
-                                <p><span id='days'></span></p>:
-                                <p><span id='hours'></span></p>:
-                                <p><span id='minutes'></span></p>:
-                                <p><span id='seconds'></span></p>
-                            </div>
-                        </div>
+
+                <div className={styles.countdownContainer}>
+      <div className={styles.countdownWrapper}>
+      <Countdown />
+        <p><span id='days'></span></p>:
+        <p><span id='hours'></span></p>:
+        <p><span id='minutes'></span></p>:
+        <p><span id='seconds'></span></p>
+      </div>
+    </div>
+
+
                         <div className={styles.actionBlockPrime}>
                             <input type="number" className={styles.quantityInput} placeholder="Exchange Quantity" id='quantity' onChange={validateExchangeAmount}></input>
                             <small className={styles.balanceText}>Balance: <small id="balance-text"></small> ETH</small>
                             <small id='notice-text' className={styles.noticeText}></small>
                             <small id='error-text' className={styles.errorText}></small>
+                            
                             {/* add to remove style={{ pointerEvents: 'none' }} and rename START SOON = BUY */}
                             <button className={styles.buyButton} onClick={buyButtonPressed} style={{ pointerEvents: 'none' }} id='buy-button'>Start Soon</button>
                         </div>
@@ -372,14 +399,9 @@ const MyComponent = () => {
                         <div className={styles.leastDetailBlockPrime}>
                             <a className={styles.leastDetailTagPrime} href={bscscanContractUrl_} rel="noreferrer" target="_blank"style={{ pointerEvents: 'none' }}>View Presale Smart Contract Address</a>
                         </div>
-
                     </div>
                     <div className={styles.brandText}><Link href="#"><a target="_blank" rel="noreferrer" id="host">Powered by ZKC</a></Link></div>
-
                 </div>
-
-
-
                 <div className={styles.textSection}>
 
                     <h2 className={styles.header}>Zk Capital - the highest decentralized classified platform on ZK SYNC Chain</h2>
@@ -400,8 +422,6 @@ const MyComponent = () => {
         </>
     )
 }
-
-
 
 MyComponent.displayName = "MyComponent"
 export default MyComponent;
