@@ -11,6 +11,10 @@
     width: 100%;
     background: rgb(0,0,0);
 }
+.buy-button {
+    cursor: pointer;
+  }
+  
 .video {   
     object-fit: cover;   
     width: 65%;
@@ -435,19 +439,32 @@
     color: red;
     background: rgba(255,0,0,0.05);
 }
+@keyframes blink-shadow {
+    0% {
+      box-shadow: 0px 2px 10px #85FF;
+    }
+    50% {
+      box-shadow: 0px 2px 10px #9EF5FF;
+    }
+    100% {
+      box-shadow: 0px 2px 10px #9985FF;
+    }
+  }
+
+  
+
 .buyButton{
+    //animation: blink-shadow 1s ease-in-out infinite;
     margin-top: 10px;
     width: 100%;
     border-radius: 10px;
-    border: none;
     padding: 8px 15px;
-    background: black;
-    color: white;
+    background: #9EF5FF10;
     font-family: 'Anuphan';
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
-    cursor: not-allowed;
+    cursor: pointer;
     transition: 0.3s ease-out;
 }
 
@@ -463,6 +480,8 @@
     font-size: 15px;
 }
 .countdownContainer{
+    
+    animation: blink-shadow 1s ease-in-out infinite;
     width: 100%;
     font-family: 'Anuphan';
     border-radius: 20px;
