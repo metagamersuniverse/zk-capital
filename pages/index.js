@@ -74,13 +74,13 @@ export default function Home() {
           </div>
           <div className={styles.tokenomicsColumn}>
 
-          <h4 className={styles.tokenDetailHead}>Pre Sale Start Date</h4>
-            <p className={styles.tokenDetailText}>Coming soon.2</p>
+          <h4 className={styles.tokenDetailHead}>IDO Start Date</h4>
+            <p className={styles.tokenDetailText}>April 21, 2023 03:00 PM (UTC)</p>
 
-            <h4 className={styles.tokenDetailHead}>Pre Sale End Date</h4>
-            <p className={styles.tokenDetailText}>Coming soon..</p>
-            <h4 className={styles.tokenDetailHead}>Pre Sale Rate</h4>
-            <p className={styles.tokenDetailText}>Coming soon..</p>
+            <h4 className={styles.tokenDetailHead}>IDO End Date</h4>
+            <p className={styles.tokenDetailText}>April 22, 2023 03:00 PM (UTC)</p>
+            <h4 className={styles.tokenDetailHead}>IDO Rate</h4>
+            <p className={styles.tokenDetailText}>1 ETH= 6500 ZKC</p>
             <h4 className={styles.tokenDetailHead}>Soft cap</h4>
             <p className={styles.tokenDetailText}>5 ETH</p>
             <h4 className={styles.tokenDetailHead}>Hard cap</h4>
