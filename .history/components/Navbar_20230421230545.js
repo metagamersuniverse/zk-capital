@@ -2,7 +2,9 @@ import styles from "../styles/Navbar.module.css"
 import Link from "next/link"
 import { useEffect } from "react";
 function Navbar() {
-    
+    useEffect(() => {
+        ethEnabled(false);
+    })
     return (
         <>
             <nav className={styles.navWrapper}>
