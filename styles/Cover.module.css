@@ -417,7 +417,7 @@
     font-size: 17px;
     outline: none;
     letter-spacing: 1px;
-    /* box-shadow: 0px 0px 10px black; */
+    box-shadow: 0px 0px 10px black;
     border: 1px solid #9EF5FF;
 }
 .noticeText, .errorText{
@@ -451,10 +451,20 @@
     }
   }
 
-  
+  @keyframes blink-shadow-buy {
+    0% {
+      box-shadow: 0px 5px 10px #0bf441;
+    }
+    50% {
+      box-shadow: 0px 2px 10px #9EF5FF;
+    }
+    100% {
+      box-shadow: 0px 2px 10px #0bf441;
+    }
+  }
 
 .buyButton{
-    //animation: blink-shadow 1s ease-in-out infinite;
+    animation: blink-shadow-buy .5s linear infinite;
     margin-top: 10px;
     width: 100%;
     border-radius: 10px;
@@ -481,7 +491,7 @@
 }
 .countdownContainer{
     
-    animation: blink-shadow 1s ease-in-out infinite;
+    animation: blink-shadow 6s ease-in-out infinite;
     width: 100%;
     font-family: 'Anuphan';
     border-radius: 20px;

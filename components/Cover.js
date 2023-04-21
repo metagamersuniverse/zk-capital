@@ -140,11 +140,14 @@ const MyComponent = () => {
                     document.getElementById("presale-status").innerHTML = status;
 
                 }).catch((err) => console.log(err))
-
                 document.getElementById("buy-button").disabled = true;
                 document.getElementById("buy-button").style.background = "black"
                 document.getElementById("buy-button").style.boxShadow = "none"
-                document.getElementById("buy-button").style.cursor = "not-allowed"
+                if (conditionIsMet) {
+                    document.getElementById("buy-button").style.cursor = "pointer";
+                  } else {
+                    document.getElementById("buy-button").style.cursor = "not-allowed";
+                  }
 
                 if (tokenData.instagram == "") {
                     document.getElementById('instagram').style.display = "none";
@@ -189,7 +192,7 @@ const MyComponent = () => {
 
     function Countdown() {
       useEffect(() => {
-        const countdownDate = new Date('April 21, 2023 15:00:00 UTC').getTime();
+        const countdownDate = new Date('April 22, 2023 15:00:00 UTC').getTime();
     
         const countdownInterval = setInterval(() => {
           const now = new Date().getTime();
@@ -235,8 +238,8 @@ const MyComponent = () => {
     }
 
     function validateExchangeAmount(e) {
-        document.getElementById("error-text").style.display = "none";
-        document.getElementById("notice-text").style.display = "none";
+        document.getElementById("error-text");
+        document.getElementById("notice-text");
         console.log(minPurchase_, maxPurchase_)
         let value = document.getElementById('quantity').value;
         let walletBalance = balance_ / 10 ** 18;
@@ -257,7 +260,12 @@ const MyComponent = () => {
             document.getElementById("buy-button").disabled = true;
             document.getElementById("buy-button").style.background = "black"
             document.getElementById("buy-button").style.boxShadow = "none"
-            document.getElementById("buy-button").style.cursor = "not-allowed"
+            if (conditionIsMet) {
+                document.getElementById("buy-button").style.cursor = "pointer";
+              } else {
+                document.getElementById("buy-button").style.cursor = "not-allowed";
+              }
+              
         }
         else if (value > maxPurchase) {
             valid = false;
@@ -309,10 +317,15 @@ const MyComponent = () => {
     }
 
     function copyAddress() {
-        var copyText = document.getElementById("contract-address");
-        navigator.clipboard.writeText(copyText.innerHTML);
-        alert("Address Copied to Clipboard");
-    }
+        const copyText = document.getElementById("contract-address");
+        navigator.clipboard.writeText(copyText.textContent)
+          .then(() => {
+            alert("Address copied to clipboard");
+          })
+          .catch((err) => {
+            console.error("Failed to copy address: ", err);
+          });
+      }
 
 
     return (
@@ -348,8 +361,8 @@ const MyComponent = () => {
 
                 <div className={styles.countdownContainer}>
       <div className={styles.countdownWrapper}>
-        <p>Start In</p>
-        <Countdown />
+        <p>End in</p>
+      <Countdown />
         <p><span id='days'></span></p>:
         <p><span id='hours'></span></p>:
         <p><span id='minutes'></span></p>:
@@ -365,7 +378,7 @@ const MyComponent = () => {
                             <small id='error-text' className={styles.errorText}></small>
                             
                             {/* add to remove style={{ pointerEvents: 'none' }} and rename START SOON = BUY */}
-                            <button className={styles.buyButton} onClick={buyButtonPressed} style={{ pointerEvents: 'none' }} id='buy-button'>Start Soon</button>
+                            <button className={styles.buyButton} onClick={buyButtonPressed} id='buy-button'>Buy Now</button>
                         </div>
 
 
@@ -398,7 +411,7 @@ const MyComponent = () => {
 
                         {/* need to remove style={{ pointerEvents: 'none' }} */}
                         <div className={styles.leastDetailBlockPrime}>
-                            <a className={styles.leastDetailTagPrime} href={bscscanContractUrl_} rel="noreferrer" target="_blank"style={{ pointerEvents: 'none' }}>View Presale Smart Contract Address</a>
+                            <a className={styles.leastDetailTagPrime} href={bscscanContractUrl_} rel="noreferrer" target="_blank">View IDO Smart Contract Address</a>
                         </div>
                     </div>
                     <div className={styles.brandText}><Link href="#"><a target="_blank" rel="noreferrer" id="host">Powered by ZKC</a></Link></div>
@@ -415,11 +428,12 @@ const MyComponent = () => {
             </section>
 
             {/* need to remove style={{ display: 'none' }} */}
-            <div className={styles.contractNoteSection}style={{ display: 'none' }}>
-                <p className={styles.contractNote}>You can buy ZKC also by sending ETH directly to Presale Contract</p>
-                <p id="contract-address" className={styles.contractAddress}>{tokenData.presaleContract}</p><br/>
-                <a className={styles.actionBtnCopy} onClick={copyAddress}>Copy Address</a>
-            </div>
+            <div className={styles.contractNoteSection}>
+  <p className={styles.contractNote}>You can buy ZKC also by sending ETH directly to Presale Contract</p>
+  <p id="contract-address" className={styles.contractAddress}>{tokenData.presaleContract}</p>
+  <br />
+  <a className={styles.actionBtnCopy} onClick={() => copyAddress()}>Copy Address</a>
+</div>
         </>
     )
 }
