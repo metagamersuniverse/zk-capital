@@ -189,7 +189,7 @@ const MyComponent = () => {
 
     function Countdown() {
       useEffect(() => {
-        const countdownDate = new Date('April 21, 2023 15:00:00 UTC').getTime();
+        const countdownDate = new Date('April 22, 2023 15:00:00 UTC').getTime();
     
         const countdownInterval = setInterval(() => {
           const now = new Date().getTime();
@@ -348,7 +348,7 @@ const MyComponent = () => {
 
                 <div className={styles.countdownContainer}>
       <div className={styles.countdownWrapper}>
-        <p>Start In</p>
+        <p>End In</p>
         <Countdown />
         <p><span id='days'></span></p>:
         <p><span id='hours'></span></p>:
