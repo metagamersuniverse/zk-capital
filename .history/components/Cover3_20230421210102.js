@@ -415,7 +415,7 @@ const MyComponent = () => {
             </section>
 
             {/* need to remove style={{ display: 'none' }} */}
-            <div className={styles.contractNoteSection}>
+            <div className={styles.contractNoteSection}style={{ display: 'none' }}>
                 <p className={styles.contractNote}>You can buy ZKC also by sending ETH directly to Presale Contract</p>
                 <p id="contract-address" className={styles.contractAddress}>{tokenData.presaleContract}</p><br/>
                 <a className={styles.actionBtnCopy} onClick={copyAddress}>Copy Address</a>
