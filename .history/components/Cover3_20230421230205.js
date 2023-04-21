@@ -394,7 +394,7 @@ const MyComponent = () => {
                     <h2 className={styles.header}>Zk Capital - the highest decentralized classified platform on ZK SYNC Chain</h2>
                     <h4 className={styles.tag}>The Zk Capital is the Highest decentralized classified platform built on ZK SYNC Chain. ZK CAPITAL has rooted its credibility amongst its target clients by enriching them with a one-stop-shop experience that is seamless, immutable, and secure; it is determined to provide its users uncensored advertising opportunities via privacy protected, community driven.</h4>
                     <div className={styles.actionWrapper}>
-                        <Link href="https://t.me/zkcapitalofficial"><a className={styles.actionBtn}>Join Now</a></Link>
+                        <Link href="https://discord.gg/zk-capital"><a className={styles.actionBtn}>Join Now</a></Link>
                         <a className={styles.actionBtn} href="https://dxsale.app/dxsaleview?saleID=27&chain=zkSync" target="_blank" rel="noopener noreferrer">Buy Now</a>
 </div>
                 </div>
