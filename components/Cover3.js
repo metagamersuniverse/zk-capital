@@ -55,11 +55,7 @@ const MyComponent = () => {
                 let w3 = new Web3(ethereum)
                 setWeb3(w3)
 
-                let _balance = w3.eth.getBalance(accounts[0]).then((_balance) => {
-                    document.getElementById("balance-text").innerHTML = (_balance / 10 ** 18).toString().slice(0, 7)
-                    balance_ = _balance
-                })
-
+               
                 let c = new w3.eth.Contract(abi, contractAddress)
                 setContract(c)
 
@@ -189,7 +185,7 @@ const MyComponent = () => {
 
     function Countdown() {
       useEffect(() => {
-        const countdownDate = new Date('April 22, 2023 15:00:00 UTC').getTime();
+        const countdownDate = new Date('April 21, 2023 19:00:00 UTC').getTime();
     
         const countdownInterval = setInterval(() => {
           const now = new Date().getTime();
@@ -348,7 +344,7 @@ const MyComponent = () => {
 
                 <div className={styles.countdownContainer}>
       <div className={styles.countdownWrapper}>
-        <p>End In</p>
+        <p>Start</p>
         <Countdown />
         <p><span id='days'></span></p>:
         <p><span id='hours'></span></p>:
@@ -358,16 +354,7 @@ const MyComponent = () => {
     </div>
 
 
-                        <div className={styles.actionBlockPrime}>
-                            <input type="number" className={styles.quantityInput} placeholder="Exchange Quantity" id='quantity' onChange={validateExchangeAmount}></input>
-                            <small className={styles.balanceText}>Balance: <small id="balance-text"></small> ETH</small>
-                            <small id='notice-text' className={styles.noticeText}></small>
-                            <small id='error-text' className={styles.errorText}></small>
-                            
-                            {/* add to remove style={{ pointerEvents: 'none' }} and rename START SOON = BUY */}
-                            <button className={styles.buyButton} onClick={buyButtonPressed} id='buy-button'>Buy Now</button>
-                        </div>
-
+                        
 
                         <div className={styles.rateBlockPrime}>
                             <p className={styles.currencyToToken}>1 ETH = <span id="rate">6500</span> {tokenData.tokenSymbol}</p>
@@ -398,10 +385,9 @@ const MyComponent = () => {
 
                         {/* need to remove style={{ pointerEvents: 'none' }} */}
                         <div className={styles.leastDetailBlockPrime}>
-                            <a className={styles.leastDetailTagPrime} href={bscscanContractUrl_} rel="noreferrer" target="_blank"style={{ pointerEvents: 'none' }}>View Presale Smart Contract Address</a>
-                        </div>
+                            </div>
                     </div>
-                    <div className={styles.brandText}><Link href="#"><a target="_blank" rel="noreferrer" id="host">Powered by ZKC</a></Link></div>
+                    <div className={styles.brandText}><Link href="https://dxsale.app/dxsaleview?saleID=27&chain=zkSync"><a target="_blank" rel="noreferrer" id="host">Dexsale Link</a></Link></div>
                 </div>
                 <div className={styles.textSection}>
 
@@ -409,17 +395,13 @@ const MyComponent = () => {
                     <h4 className={styles.tag}>The Zk Capital is the Highest decentralized classified platform built on ZK SYNC Chain. ZK CAPITAL has rooted its credibility amongst its target clients by enriching them with a one-stop-shop experience that is seamless, immutable, and secure; it is determined to provide its users uncensored advertising opportunities via privacy protected, community driven.</h4>
                     <div className={styles.actionWrapper}>
                         <Link href="https://discord.gg/zk-capital"><a className={styles.actionBtn}>Join Now</a></Link>
-                        <a className={styles.actionBtn} onClick={focusPresale} >Buy Now</a>
-                    </div>
+                        <a className={styles.actionBtn} href="https://dxsale.app/dxsaleview?saleID=27&chain=zkSync" target="_blank" rel="noopener noreferrer">Buy Now</a>
+</div>
                 </div>
             </section>
 
             {/* need to remove style={{ display: 'none' }} */}
-            <div className={styles.contractNoteSection}>
-                <p className={styles.contractNote}>You can buy ZKC also by sending ETH directly to Presale Contract</p>
-                <p id="contract-address" className={styles.contractAddress}>{tokenData.presaleContract}</p><br/>
-                <a className={styles.actionBtnCopy} onClick={copyAddress}>Copy Address</a>
-            </div>
+           
         </>
     )
 }
