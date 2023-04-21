@@ -356,6 +356,7 @@ const MyComponent = () => {
 
                 <div className={styles.countdownContainer}>
       <div className={styles.countdownWrapper}>
+        <p>Start in</p>
       <Countdown />
         <p><span id='days'></span></p>:
         <p><span id='hours'></span></p>:

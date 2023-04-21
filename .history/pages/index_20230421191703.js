@@ -81,10 +81,10 @@ export default function Home() {
             <p className={styles.tokenDetailText}>April 22, 2023 03:00 PM (UTC)</p>
             <h4 className={styles.tokenDetailHead}>IDO Rate</h4>
             <p className={styles.tokenDetailText}>1 ETH= 6500 ZKC</p>
-            <h4 className={styles.tokenDetailHead}>Soft cap</h4>
-            <p className={styles.tokenDetailText}>5 ETH</p>
-            <h4 className={styles.tokenDetailHead}>Hard cap</h4>
-            <p className={styles.tokenDetailText}>10 ETH</p>
+            <h4 className={styles.tokenDetailHead}>Soft / Hard cap</h4>
+            <p className={styles.tokenDetailText}>5 / 10 ETH</p>
+            <h4 className={styles.tokenDetailHead}>Min / Max Buy</h4>
+            <p className={styles.tokenDetailText}>0.017 ETH - 0.71 ETH</p>
           </div>
           <div className={styles.tokenomicsColumn}>
 
