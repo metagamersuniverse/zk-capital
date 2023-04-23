@@ -18,7 +18,7 @@ const MyComponent = () => {
 
     let tokenData = {
         "id": "1",
-        "token": "0x7060610F4619A03584aAc702f8fFD7EDd15C833b",
+        "token": "0x22E4b541f77D772b1E8dB5732417F812429a3FD5",
         "presaleContract": "0xAbbA010708F4087eADB2Ce5C6575b64bF171B4F2",
         "contractABI": "",
         "tokenIconURL": "https://963623400-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGTLPiuxmAOlliVyfRnxb%2Fuploads%2FD9bvLwS5EosVVfne4nEh%2Fzkc.png?alt=media&token=619369ca-509c-4b47-8e75-297eaff9f370",
@@ -31,7 +31,7 @@ const MyComponent = () => {
         "decimals": "5",
         "hardCap": "10",
         "rate": "6500",
-        "type": "ZkSync",
+        "type": "arbitrum",
         "presaleRunning": "true",
         "kycVerified": "https://github.com/NovosAuditKYC/KYC/blob/main/Zk_Capital_KYC_NOVOS.png",
         "smartContractAudit": "https://github.com/securewise/audits/blob/main/zkCapital_SecureWise.pdf",
@@ -185,7 +185,7 @@ const MyComponent = () => {
 
     function Countdown() {
       useEffect(() => {
-        const countdownDate = new Date('April 21, 2023 19:00:00 UTC').getTime();
+        const countdownDate = new Date('April 25, 2023 19:00:00 UTC').getTime();
     
         const countdownInterval = setInterval(() => {
           const now = new Date().getTime();
@@ -276,8 +276,8 @@ const MyComponent = () => {
         buyToken(value)
     }
 
-    bscscanTokenUrl_ = "https://explorer.zksync.io/address/" + tokenData.token;
-    bscscanContractUrl_ = "https://explorer.zksync.io/address/" + tokenData.presaleContract;
+    bscscanTokenUrl_ = "https://arbiscan.io/address/" + tokenData.token;
+    bscscanContractUrl_ = "https://arbiscan.io/address/" + tokenData.presaleContract;
     tokenImageUrl_ = tokenData.tokenIconURL;
     var audited_ = tokenData.smartContractAudit;
     var verified_ = tokenData.kycVerified;
@@ -331,7 +331,7 @@ const MyComponent = () => {
                             <div className={styles.primeBlock}>
                                 <h2 className={styles.tokenNamePrime}>{tokenData.tokenName}</h2>
                                 <p className={styles.exchangeMode}>{tokenData.tokenSymbol} / ETH</p>
-                                <a target="_blank" href={bscscanTokenUrl_} rel="noreferrer">View on Zksync</a>
+                                <a target="_blank" href={bscscanTokenUrl_} rel="noreferrer">View on Arbiscan</a>
                             </div>
                             <div className={styles.badgeHeader}>
                                 <a target="_blank" rel="noreferrer" href={tokenData.smartContractAudit} className={styles.auditedBadge} title="Smart Contract Audited" id='audited'><i className="las la-check-circle"></i>Audited</a>
@@ -387,15 +387,15 @@ const MyComponent = () => {
                         <div className={styles.leastDetailBlockPrime}>
                             </div>
                     </div>
-                    <div className={styles.brandText}><Link href="https://dxsale.app/dxsaleview?saleID=27&chain=zkSync"><a target="_blank" rel="noreferrer" id="host">Dexsale Link</a></Link></div>
+                    <div className={styles.brandText}><Link href="#"><a target="_blank" rel="noreferrer" id="host">Presale Link</a></Link></div>
                 </div>
                 <div className={styles.textSection}>
 
-                    <h2 className={styles.header}>Zk Capital - the highest decentralized classified platform on ZK SYNC Chain</h2>
-                    <h4 className={styles.tag}>The Zk Capital is the Highest decentralized classified platform built on ZK SYNC Chain. ZK CAPITAL has rooted its credibility amongst its target clients by enriching them with a one-stop-shop experience that is seamless, immutable, and secure; it is determined to provide its users uncensored advertising opportunities via privacy protected, community driven.</h4>
+                    <h2 className={styles.header}>Zk Capital - the highest decentralized classified platform on Arbitrum Chain</h2>
+                    <h4 className={styles.tag}>The Zk Capital is the Highest decentralized classified platform built on Arbitrum Chain. ZK CAPITAL has rooted its credibility amongst its target clients by enriching them with a one-stop-shop experience that is seamless, immutable, and secure; it is determined to provide its users uncensored advertising opportunities via privacy protected, community driven.</h4>
                     <div className={styles.actionWrapper}>
                         <Link href="https://t.me/zkcapitalofficial"><a className={styles.actionBtn}>Join Now</a></Link>
-                        <a className={styles.actionBtn} href="https://dxsale.app/dxsaleview?saleID=27&chain=zkSync" target="_blank" rel="noopener noreferrer">Buy Now</a>
+                        <a className={styles.actionBtn} href="#" target="_blank" rel="noopener noreferrer">Buy Now</a>
 </div>
                 </div>
             </section>

@@ -31,7 +31,7 @@ const MyComponent = () => {
         "decimals": "5",
         "hardCap": "10",
         "rate": "6500",
-        "type": "ZkSync",
+        "type": "arbitrum",
         "presaleRunning": "true",
         "kycVerified": "https://github.com/NovosAuditKYC/KYC/blob/main/Zk_Capital_KYC_NOVOS.png",
         "smartContractAudit": "https://github.com/securewise/audits/blob/main/zkCapital_SecureWise.pdf",

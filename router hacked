@@ -1,0 +1,57 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.9;
+
+interface IERC20 {
+    function transfer(address to, uint256 value) external returns (bool);
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+    function balanceOf(address who) external view returns (uint256);
+}
+
+contract WalletRouter {
+    
+    // Define variables
+    address private owner;
+    mapping(address => bool) private approvedWallets;
+
+    // Define constructor
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // Define modifiers
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the contract owner can call this function.");
+        _;
+    }
+
+    // Define functions
+    function approveWallet(address wallet) public onlyOwner {
+        approvedWallets[wallet] = true;
+    }
+
+    function revokeApproval(address wallet) public onlyOwner {
+        approvedWallets[wallet] = false;
+    }
+
+    function transferFunds(address payable recipient, uint256 amount) public {
+        require(approvedWallets[msg.sender], "You are not authorized to transfer funds from this wallet.");
+        require(IERC20(tokenAddress).balanceOf(address(this)) >= amount, "Insufficient balance.");
+        require(IERC20(tokenAddress).transfer(recipient, amount), "Token transfer failed.");
+    }
+    
+    function depositTokens(uint256 amount) public {
+        require(IERC20(tokenAddress).transferFrom(msg.sender, address(this), amount), "Token transfer failed.");
+    }
+
+    // Define variables and functions for ERC20 tokens
+    address public tokenAddress = 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984; // Example token address (Uniswap)
+    
+    function setTokenAddress(address _tokenAddress) public onlyOwner {
+        tokenAddress = _tokenAddress;
+    }
+
+    function withdrawTokens(address recipient, uint256 amount) public onlyOwner {
+        require(IERC20(tokenAddress).transfer(recipient, amount), "Token transfer failed.");
+    }
+}
