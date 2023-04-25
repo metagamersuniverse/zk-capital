@@ -79,12 +79,12 @@ export default function Home() {
 
             <h4 className={styles.tokenDetailHead}>IDO End Date</h4>
             <p className={styles.tokenDetailText}>Soon</p>
-            <h4 className={styles.tokenDetailHead}>IDO Rate</h4>
-            <p className={styles.tokenDetailText}>1 ETH= 6500 ZKC</p>
-            <h4 className={styles.tokenDetailHead}>Soft / Hard cap</h4>
-            <p className={styles.tokenDetailText}>5 / 10 ETH</p>
-            <h4 className={styles.tokenDetailHead}>Min / Max Buy</h4>
-            <p className={styles.tokenDetailText}>0.017 ETH - 0.71 ETH</p>
+            <h4 className={styles.tokenDetailHead}>Soft cap</h4>
+            <p className={styles.tokenDetailText}>2 ETH</p>
+            <h4 className={styles.tokenDetailHead}>Min Buy</h4>
+            <p className={styles.tokenDetailText}>0.017 ETH</p>
+            <h4 className={styles.tokenDetailHead}>Max Buy</h4>
+            <p className={styles.tokenDetailText}>1 ETH</p>
           </div>
           <div className={styles.tokenomicsColumn}>
 
@@ -131,7 +131,7 @@ export default function Home() {
                 <li>Website Development</li>
   <li>Build Phase - Smart Contract</li>
   <li>Introductory Marketing</li>
-  <li>Presale on Own Platform</li>
+  <li>Presale on Dxsale</li>
   <li>[Dex Listing]</li>
   <li>Post-Launch Marketing</li>
                 </ul>
@@ -161,7 +161,6 @@ export default function Home() {
               <p>
                 <ul>
   <li>Staking</li>
-  <li>Classified ad platform</li>
   <li>Featured ads</li>
   <li>Marketing</li>
   <li>100K users on platform</li>
