@@ -185,7 +185,7 @@ const MyComponent = () => {
 
     function Countdown() {
       useEffect(() => {
-        const countdownDate = new Date('April 25, 2023 19:00:00 UTC').getTime();
+        const countdownDate = new Date('April 30, 2023 19:00:00 UTC').getTime();
     
         const countdownInterval = setInterval(() => {
           const now = new Date().getTime();

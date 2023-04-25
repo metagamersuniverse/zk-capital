@@ -198,12 +198,7 @@ export default function Home() {
           <h3>One-Stop-Shop Experience:</h3>
           <p className={styles.whyAnswer}>
           Zk Capital offers a seamless, immutable, and secure decentralized classified platform that provides users with a one-stop-shop experience.</p>
-          <div className={styles.whyAnswerPoint}>
-            <h3>Privacy-Protected and Community-Driven:</h3>
-            <p>
-            Zk Capital prioritizes user privacy by offering uncensored advertising opportunities via privacy-protected, community-driven mechanisms.
-            </p>
-          </div>
+         
           <div className={styles.whyAnswerPoint}>
             <h3>Secured Auto-Compounding and Auto-Staking:</h3>
             <p>
