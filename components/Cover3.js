@@ -357,7 +357,7 @@ const MyComponent = () => {
                         
 
                         <div className={styles.rateBlockPrime}>
-                            <p className={styles.currencyToToken}>1 ETH = <span id="rate">6500</span> {tokenData.tokenSymbol}</p>
+                            <p className={styles.currencyToToken}>SOFTCAP <span id="rate">2</span> ETH</p>
                         </div>
                         <div className={styles.barBlockPrime}>
                             <div className={styles.upperStatLine}>
